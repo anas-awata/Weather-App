@@ -1,5 +1,9 @@
 # weather-app
 
+## Project Description
+
+This is a simple vue project to show the users location weather or search for the weather of any city you want !
+
 ## Project setup
 ```
 npm install
