@@ -114,7 +114,7 @@ export default {
         "sep",
         "Oct",
         "Nov",
-        "Dec",
+        "Dec ",
       ];
       let days = [
         "Sunday",
