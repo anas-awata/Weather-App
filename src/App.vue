@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="weatherstatus">
+  <div id="app" :class="weatherstatus" v-cloak>
     <main>
       <div class="searchbox">
         <input
@@ -53,6 +53,7 @@ export default {
       disabledC: true,
       lat: "",
       lon: "",
+      Time: "",
     };
   },
   methods: {
@@ -129,6 +130,7 @@ export default {
       let date = d.getDate();
       let month = months[d.getMonth()];
       let year = d.getFullYear();
+      this.Time = d.getHours();
       return `${day} ${date} ${month} ${year}`;
     },
     //fetching new data for imperial system.
@@ -167,25 +169,31 @@ export default {
     //changing the app class to change background at each weather status.
     weatherstatus() {
       if (
-        (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp > 10 &&
-          this.weather.weather[0].main == "Clouds" &&
-          this.unit == "metric") ||
-        (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp > 50 &&
-          this.weather.weather[0].main == "Clouds" &&
-          this.unit == "imperial")
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Clouds" &&
+        this.Time > 6 &&
+        this.Time < 19
       ) {
         return "clouds";
       } else if (
-        (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp > 10 &&
-          this.unit == "metric") ||
-        (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp > 50 &&
-          this.unit == "imperial")
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Clouds" &&
+        (this.Time < 6 || this.Time > 19)
+      ) {
+        return "cloudy-night";
+      } else if (
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Clear" &&
+        this.Time > 6 &&
+        this.Time < 19
       ) {
         return "warm";
+      } else if (
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Clear" &&
+        (this.Time < 6 || this.Time > 19)
+      ) {
+        return "clear-night";
       } else if (
         typeof this.weather.main != "undefined" &&
         this.weather.weather[0].main == "rain"
@@ -193,10 +201,10 @@ export default {
         return "rain";
       } else if (
         (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp < 10 &&
+          this.weather.main.temp < 0 &&
           this.unit == "metric") ||
         (typeof this.weather.main != "undefined" &&
-          this.weather.main.temp < 50 &&
+          this.weather.main.temp < 32 &&
           this.unit == "imperial")
       ) {
         return "winter";

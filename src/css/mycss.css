@@ -29,10 +29,20 @@ body {
   transition-delay: 1s;
 }
 #app.rain {
-    background-image: url("../assets/rain.jpg");
-    transition: 0.4s;
-    transition-delay: 1s;
-  }
+  background-image: url("../assets/rain.jpg");
+  transition: 0.4s;
+  transition-delay: 1s;
+}
+#app.clear-night {
+  background-image: url("../assets/clear-night.jpg");
+  transition: 0.4s;
+  transition-delay: 1s;
+}
+#app.cloudy-night {
+  background-image: url("../assets/cloudy-night.jpg");
+  transition: 0.4s;
+  transition-delay: 1s;
+}
 main {
   min-height: 100vh;
   padding: 25px;
@@ -156,4 +166,15 @@ img {
   right: 40px;
   top: 33px;
   cursor: pointer;
+}
+[v-cloak] > *{display: none;}
+[v-cloak] ::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: "../assets/loading.svg";
+    background-size: cover;
+    left: 50%;
+    right: 50%;
 }
