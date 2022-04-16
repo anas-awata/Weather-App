@@ -196,7 +196,7 @@ export default {
         return "clear-night";
       } else if (
         typeof this.weather.main != "undefined" &&
-        this.weather.weather[0].main == "rain"
+        this.weather.weather[0].main == "Rain"
       ) {
         return "rain";
       } else if (
