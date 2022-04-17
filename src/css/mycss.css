@@ -7,13 +7,14 @@ body {
   font-family: "montserrat", sans-serif;
 }
 #app {
+  background-image: url("../assets/weather.jpg");
   background-size: contain;
   background-position: top;
-  background-image: url("../assets/weather.jpg");
   transition: 0.4s;
   transition-delay: 0.8s;
   background-repeat: no-repeat;
   background-color: rgb(40, 168, 222);
+  transition: background-size 0.4s linear 1s;
 }
 #app.warm {
   background-image: url("../assets/sunny.jpg");
@@ -184,14 +185,16 @@ img {
   top: 33px;
   cursor: pointer;
 }
-[v-cloak] > *{display: none;}
+[v-cloak] > * {
+  display: none;
+}
 [v-cloak] ::before {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background-image: "../assets/loading.svg";
-    background-size: cover;
-    left: 50%;
-    right: 50%;
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: "../assets/loading.svg";
+  background-size: cover;
+  left: 50%;
+  right: 50%;
 }
