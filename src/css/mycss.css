@@ -7,39 +7,53 @@ body {
   font-family: "montserrat", sans-serif;
 }
 #app {
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: top;
   background-image: url("../assets/weather.jpg");
   transition: 0.4s;
   transition-delay: 0.8s;
+  background-repeat: no-repeat;
+  background-color: rgb(40, 168, 222);
 }
 #app.warm {
   background-image: url("../assets/sunny.jpg");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
 #app.clouds {
   background-image: url("../assets/clouds.jpg");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
 #app.winter {
   background-image: url("../assets/cold.webp");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
 #app.rain {
   background-image: url("../assets/rain.jpg");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
 #app.clear-night {
   background-image: url("../assets/clear-night.jpg");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
 #app.cloudy-night {
   background-image: url("../assets/cloudy-night.jpg");
+  background-size: cover;
+  background-position: center;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
