@@ -178,7 +178,7 @@ export default {
       } else if (
         typeof this.weather.main != "undefined" &&
         this.weather.weather[0].main == "Clouds" &&
-        (this.Time < 6 || this.Time > 19)
+        (this.Time < 6 || this.Time >= 19)
       ) {
         return "cloudy-night";
       } else if (
@@ -191,7 +191,7 @@ export default {
       } else if (
         typeof this.weather.main != "undefined" &&
         this.weather.weather[0].main == "Clear" &&
-        (this.Time < 6 || this.Time > 19)
+        (this.Time < 6 || this.Time >= 19)
       ) {
         return "clear-night";
       } else if (
