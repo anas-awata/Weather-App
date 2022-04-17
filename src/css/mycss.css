@@ -8,40 +8,40 @@ body {
 }
 #app {
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   background-image: url("../assets/weather.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.warm {
   background-image: url("../assets/sunny.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.clouds {
   background-image: url("../assets/clouds.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.winter {
   background-image: url("../assets/cold.webp");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.rain {
   background-image: url("../assets/rain.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.clear-night {
   background-image: url("../assets/clear-night.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 #app.cloudy-night {
   background-image: url("../assets/cloudy-night.jpg");
   transition: 0.4s;
-  transition-delay: 1s;
+  transition-delay: 0.8s;
 }
 main {
   min-height: 100vh;
@@ -84,11 +84,14 @@ main {
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 .notfound {
-  color: #fff;
+  color: rgb(255, 255, 255);
   font-size: 50px;
   font-weight: 500;
   text-align: center;
-  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: -1px -1px rgba(0, 0, 0);
+  text-shadow: 1px -1px rgba(0, 0, 0);
+  text-shadow: -1px 1px rgba(0, 0, 0);
+  text-shadow: 1px 1px rgba(0, 0, 0);
   margin-top: 200px;
 }
 .locationbox .date {
