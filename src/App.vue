@@ -218,4 +218,5 @@ export default {
     this.mountlocator();
   },
 };
+//{"name":"Weathery","short_name":"Weathery","theme_color":"#000000","icons":[{"src":".////myicon.png","sizes":"192x192","type":"image/png"},
 </script>
