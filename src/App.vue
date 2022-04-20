@@ -208,6 +208,16 @@ export default {
           this.unit == "imperial")
       ) {
         return "winter";
+      } else if (
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Sain"
+      ) {
+        return "sand";
+      } else if (
+        typeof this.weather.main != "undefined" &&
+        this.weather.weather[0].main == "Mist"
+      ) {
+        return "mist";
       } else {
         return "";
       }
