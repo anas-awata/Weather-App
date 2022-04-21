@@ -69,15 +69,15 @@ body {
   transition: 0.4s;
   transition-delay: 0.8s;
 }
-#app.smoke {
-  background-image: url("../assets/smoke.jpg");
+#app.dust {
+  background-image: url("../assets/dust.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
   transition-delay: 0.8s;
 }
-#app.dust {
-  background-image: url("../assets/dust.jpg");
+#app.smoke {
+  background-image: url("../assets/smoke.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
@@ -210,7 +210,19 @@ img {
   top: 33px;
   cursor: pointer;
 }
-
+[v-cloak] {
+  display: none !important;
+}
+[v-cloak] ::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: "../assets/loading.gif";
+  background-size: cover;
+  left: 50%;
+  right: 50%;
+}
 @media (min-width: 900px){
   #app {
     background-image: url("../assets/error.jpg");
@@ -222,7 +234,4 @@ img {
   .notfound{
     margin-top: 20%;
   }
-}
-[v-cloak] {
-  display: none !important;
 }
